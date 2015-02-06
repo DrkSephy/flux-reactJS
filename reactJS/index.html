@@ -12,11 +12,14 @@
     <script type="text/jsx">
       // Your code here
       var CommentBox = React.createClass({
+        getInitialState: function(){
+          return {data: []};
+        },
         render: function() {
           return (
             <div className="commentBox">
               <h1>Comments</h1>
-              <CommentList/>
+              <CommentList={this.state.data} />
               <CommentForm />
               Hello, world! I am a CommentBox.
             </div>
@@ -70,7 +73,7 @@
       });
 
       React.render(
-        <CommentBox />,
+        <CommentBox url="comments.json" />,
         document.getElementById('content')
       );
 
