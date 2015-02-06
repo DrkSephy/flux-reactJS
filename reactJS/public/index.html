@@ -39,7 +39,7 @@
           return (
             <div className="commentBox">
               <h1>Comments</h1>
-              <CommentList={this.state.data} />
+              <CommentList data={this.state.data} />
               <CommentForm />
               Hello, world! I am a CommentBox.
             </div>
@@ -71,22 +71,23 @@
         render: function() {
           return (
             <div className="commentForm">
-              Hello, world! I am a CommentForm. 
+              Hello, world! I am a CommentForm.
             </div>
           );
         }
       });
 
       var converter = new Showdown.converter();
+
       var Comment = React.createClass({
         render: function() {
-          var rawMarkup = converter.makeHTML(this.props.children.toString());
+          var rawMarkup = converter.makeHtml(this.props.children.toString());
           return (
             <div className="comment">
               <h2 className="commentAuthor">
                 {this.props.author}
               </h2>
-              <span dangerouslySetInnerHTML={{__html: rawMarkup }} />
+              <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
             </div>
           );
         }

@@ -16,7 +16,7 @@ from SimpleHTTPServer import SimpleHTTPRequestHandler
 
 PUBLIC_PATH = "public"
 
-file = open('_comments.json', 'r+')
+file = open('comments.json', 'r+')
 comments = json.loads(file.read())
 file.close()
 
@@ -50,7 +50,7 @@ class MyHandler(SimpleHTTPRequestHandler):
             # Save the data
             comments.append({u"author": form.getfirst("author"), u"text": form.getfirst("text")})
             # Write to file
-            file = open('_comments.json', 'w+')
+            file = open('comments.json', 'w+')
             file.write(json.dumps(comments))
             file.close()
 
