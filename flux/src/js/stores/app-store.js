@@ -111,7 +111,7 @@ var AppStore = merge(EventEmitter.prototype, {
     }
     AppStore.emitChange();
 
-    // Return true, this is a chain of promises that we need to resolve
+    // Return true, this is a chain of promises that we need to resolve	
     return true;
   })
 })
