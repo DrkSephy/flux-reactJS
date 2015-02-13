@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var Catalogs\ = require('../components/app-catalog.js');
+var Catalog = require('../components/app-catalog.js');
 
 var APP = 
 	React.createClass({
